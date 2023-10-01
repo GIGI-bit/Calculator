@@ -37,9 +37,9 @@
 
     }
 
-    public static double Multiply(double num_1,double num_2)=>num_1*num_2;
-    public static double Subtraction(double num_1,double num_2)=> num_1-num_2;
-    public static double Addition(double num_1,double num_2)=> num_1 + num_2;
+    public static double Multiply(double num_1, double num_2) => num_1 * num_2;
+    public static double Subtraction(double num_1, double num_2) => num_1 - num_2;
+    public static double Addition(double num_1, double num_2) => num_1 + num_2;
     public static double Division(double num_1, double num_2)
     {
         if (num_2 == 0)
@@ -53,32 +53,31 @@
 
     private static void Main(string[] args)
     {
-        int index= Menu("Addition", "Subtraction", "Multiply", "Divide");
+        int index = Menu("Addition", "Subtraction", "Multiply", "Divide");
         Console.Clear();
         Console.Write("Enter first number: ");
-        double num_1=Convert.ToDouble(Console.ReadLine());
+        double num_1 = Convert.ToDouble(Console.ReadLine());
         Console.Write("Enter second number: ");
         double num_2 = Convert.ToDouble(Console.ReadLine());
         double answer = 0;
-        if (index==0)
+        switch (index)
         {
-            answer=Addition(num_1,num_2);
-            Console.WriteLine(num_1+" + "+num_2+" = "+answer);
-        }
-        else if(index==1)
-        {
-            answer=Subtraction(num_1,num_2);
-            Console.WriteLine(num_1+" - "+num_2+" = "+answer);
-        }
-        else if(index==2)
-        {
-            answer=Multiply(num_1,num_2);
-            Console.WriteLine(num_1+" * "+num_2+" = "+answer);
-        }
-        else if(index==3)
-        {
-            answer=Division(num_1 ,num_2);
-            Console.WriteLine(num_1+" / "+num_2+" = "+answer);
+            case 0:
+                answer = Addition(num_1, num_2);
+                Console.WriteLine(num_1 + " + " + num_2 + " = " + answer);
+                break;
+            case 1:
+                answer = Subtraction(num_1, num_2);
+                Console.WriteLine(num_1 + " - " + num_2 + " = " + answer);
+                break;
+            case 2:
+                answer = Multiply(num_1, num_2);
+                Console.WriteLine(num_1 + " * " + num_2 + " = " + answer);
+                break;
+            case 3:
+                answer = Division(num_1, num_2);
+                Console.WriteLine(num_1 + " / " + num_2 + " = " + answer);
+                break;
         }
     }
 
